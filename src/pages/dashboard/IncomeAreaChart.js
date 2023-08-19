@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
 // material-ui
@@ -30,13 +29,13 @@ const areaChartOptions = {
 
 // ==============================|| INCOME AREA CHART ||============================== //
 
-const IncomeAreaChart = ({ slot }) => {
+const IncomeAreaChart = ({population, gdp,solar }) => {
   const theme = useTheme();
-
   const { primary, secondary } = theme.palette.text;
   const line = theme.palette.divider;
 
   const [options, setOptions] = useState(areaChartOptions);
+  const [factor, setFactor] = useState(1);
 
   useEffect(() => {
     setOptions((prevState) => ({
@@ -44,9 +43,7 @@ const IncomeAreaChart = ({ slot }) => {
       colors: [theme.palette.primary.main, theme.palette.primary[700]],
       xaxis: {
         categories:
-          slot === 'month'
-            ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          ['2028', '2030', '2032', '2034', '2036', '2038', '2040', '2042', '2044', '2046', '2048', '2050'],
         labels: {
           style: {
             colors: [
@@ -69,7 +66,7 @@ const IncomeAreaChart = ({ slot }) => {
           show: true,
           color: line
         },
-        tickAmount: slot === 'month' ? 11 : 7
+        tickAmount:  11 
       },
       yaxis: {
         labels: {
@@ -85,37 +82,23 @@ const IncomeAreaChart = ({ slot }) => {
         theme: 'light'
       }
     }));
-  }, [primary, secondary, line, theme, slot]);
+  }, [primary, secondary, line, theme]);
 
-  const [series, setSeries] = useState([
-    {
-      name: 'Page Views',
-      data: [0, 86, 28, 115, 48, 210, 136]
-    },
-    {
-      name: 'Sessions',
-      data: [0, 43, 14, 56, 24, 105, 68]
-    }
-  ]);
+  const [series, setSeries] = useState([]);
 
   useEffect(() => {
+    setFactor(population*0.76 + gdp*1.33 + solar*.34);
     setSeries([
       {
         name: 'Page Views',
-        data: slot === 'month' ? [76, 85, 101, 98, 87, 105, 91, 114, 94, 86, 115, 35] : [31, 40, 28, 51, 42, 109, 100]
+        data: [9*factor,16*factor,25*factor,36*factor,49*factor,64*factor, 81*factor,100*factor,121*factor,142*factor, 160*factor, 190*factor]
       },
-      {
-        name: 'Sessions',
-        data: slot === 'month' ? [110, 60, 150, 35, 60, 36, 26, 45, 65, 52, 53, 41] : [11, 32, 45, 32, 34, 52, 41]
-      }
     ]);
-  }, [slot]);
+  }, [factor,population, gdp,solar]);
 
   return <ReactApexChart options={options} series={series} type="area" height={450} />;
 };
 
-IncomeAreaChart.propTypes = {
-  slot: PropTypes.string
-};
+
 
 export default IncomeAreaChart;
