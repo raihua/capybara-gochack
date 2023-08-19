@@ -6,6 +6,10 @@ import MainLayout from 'layout/MainLayout';
 
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard')));
+const EnergyConsumptionDefault = Loadable(lazy(() => import('pages/energyConsumption')));
+const PopulationDefault = Loadable(lazy(() => import('pages/population')));
+const GdpDefault = Loadable(lazy(() => import('pages/gdp')));
+const SolarDefault = Loadable(lazy(() => import('pages/solar')));
 
 // render - sample page
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/SamplePage')));
@@ -36,7 +40,23 @@ const MainRoutes = {
         {
           path: 'default',
           element: <DashboardDefault />
-        }
+        },
+        {
+          path: 'energyConsumption',
+          element: <EnergyConsumptionDefault />
+        },
+        {
+          path: 'population',
+          element: <PopulationDefault />
+        },
+        {
+          path: 'gdp',
+          element: <GdpDefault />
+        },
+        {
+          path: 'solar',
+          element: <SolarDefault />
+        },
       ]
     },
     {
