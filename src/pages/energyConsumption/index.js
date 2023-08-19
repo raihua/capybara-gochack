@@ -55,7 +55,7 @@ const DashboardDefault = () => {
                 color={slot === 'month' ? 'primary' : 'secondary'}
                 variant={slot === 'month' ? 'outlined' : 'text'}
               >
-                Month
+                Day
               </Button>
               <Button
                 size="small"
@@ -63,7 +63,7 @@ const DashboardDefault = () => {
                 color={slot === 'week' ? 'primary' : 'secondary'}
                 variant={slot === 'week' ? 'outlined' : 'text'}
               >
-                Week
+                Night
               </Button>
             </Stack>
           </Grid>
