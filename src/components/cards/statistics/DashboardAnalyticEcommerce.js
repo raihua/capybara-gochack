@@ -20,7 +20,7 @@ const AnalyticEcommerce = ({ color, title, count, percentage, isLoss }) => (
       <Grid container alignItems="center">
         <Grid item>
           <Typography variant="h4" color="inherit">
-            {count}
+            {count} %
           </Typography>
         </Grid>
         {percentage && (
