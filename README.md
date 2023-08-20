@@ -13,7 +13,7 @@ Additionally, we have pondered the relationship between EV development and energ
 
 
 ## Getting started
-Visit at capybara-govhack.vercel.app
+Visit us at capybara-govhack.vercel.app or follow these steps to get started:
 or
 Clone from Github
 ```
@@ -47,10 +47,10 @@ You can use the Forecast Generator tool by running it in Python. Make sure to ad
 <img width="1395" alt="Screenshot 2023-08-20 at 4 09 40 pm" src="https://github.com/raihua/capybara-govhack/assets/55374648/ebb6a45c-d83a-407c-a02a-d73bb0d1a139">
 
 ## Team Members
-Thomas Keo
-Hanqing Zhao
-Thenul Premadasa
-Peter Trinh
-Patrick Li
+-Thomas Keo
+-Hanqing Zhao
+-Thenul Premadasa
+-Peter Trinh
+-Patrick Li
 
-
+Feel free to explore our collaborative effort, the ElectroForesight Dashboard, and join us in shaping the future of Electric Vehicles!
