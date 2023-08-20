@@ -18,20 +18,20 @@ import AnalyticEcommerce from 'components/cards/statistics/DashboardAnalyticEcom
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
 const DashboardDefault = () => {
-  const [noEVs, setnoEVs] = useState(83000);
-  const [battery, setbattery] = useState(60); //kwh
-  const [consumer, setconsumer] = useState(12); //kwh
+  const [noEVs, setnoEVs] = useState(100); //83000
+  const [battery, setbattery] = useState(100); //kwh 60
+  const [consumer, setconsumer] = useState(100); //kwh 12
 
   const chagenoEVs = (change) => {
-    let newnoEVs = change=='add'?noEVs + 5000 : noEVs - 5000;
+    let newnoEVs = change=='add'?noEVs + 10 : noEVs - 10;
     setnoEVs(newnoEVs);
   }
   const chagebattery = (change) => {
-    let newbattery = change=='add'?battery + 5 : battery - 5;
+    let newbattery = change=='add'?battery + 10 : battery - 10;
     setbattery(newbattery);
   }
   const chageconsumer = (change) => {
-    let newconsumer = change=='add'?consumer + 1 : consumer - 1;
+    let newconsumer = change=='add'?consumer + 10 : consumer - 10;
     setconsumer(newconsumer);
   }
   return (

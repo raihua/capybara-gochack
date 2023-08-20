@@ -88,15 +88,15 @@ const IncomeAreaChart = ({noEVs, battery, consumer }) => {
   const [series, setSeries] = useState([]);
 
   useEffect(() => {
-    setEnergy(Math.round((noEVs*battery)/100000));
-    setconsumers(Math.round((consumer*9)));
+    setEnergy(Math.round((((noEVs*0.01)*83000)*((battery*0.01)*60))/1000)); //ev = 83000, battery = 60 ==mwh
+    setconsumers(Math.round(((consumer*0.01)*12*9000000)/10000)); //kwh
     setSeries([
       {
-        name: 'Energy Produced',
+        name: 'Energy Produced (MWh)',
         data: [9*Energy, 16*Energy, 25*Energy, 36*Energy, 49*Energy, 64*Energy,  81*Energy, 100*Energy, 121*Energy, 142*Energy, 160*Energy, 190*Energy]
       },
       {
-        name: 'Energy Consumed',
+        name: 'Energy Consumed (MWh)',
         data: [9*consumers, 16*consumers, 25*consumers, 36*consumers, 49*consumers, 64*consumers,  81*consumers, 100*consumers, 121*consumers, 142*consumers,  160*consumers,  190*consumers] 
       }
     ]);
