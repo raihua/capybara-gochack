@@ -12,32 +12,92 @@ import {
 // project import
 import IncomeAreaChart from './IncomeAreaChart';
 import MainCard from 'components/MainCard';
-import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
+import AnalyticEcommerce from 'components/cards/statistics/DashboardAnalyticEcommerce';
 
 
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
 const DashboardDefault = () => {
-  const [slot, setSlot] = useState('week');
+  const [noEVs, setnoEVs] = useState(83000);
+  const [battery, setbattery] = useState(60); //kwh
+  const [consumer, setconsumer] = useState(12); //kwh
 
+  const chagenoEVs = (change) => {
+    let newnoEVs = change=='add'?noEVs + 5000 : noEVs - 5000;
+    setnoEVs(newnoEVs);
+  }
+  const chagebattery = (change) => {
+    let newbattery = change=='add'?battery + 5 : battery - 5;
+    setbattery(newbattery);
+  }
+  const chageconsumer = (change) => {
+    let newconsumer = change=='add'?consumer + 1 : consumer - 1;
+    setconsumer(newconsumer);
+  }
   return (
     <Grid container rowSpacing={4.5} columnSpacing={2.75}>
       {/* row 1 */}
       <Grid item xs={12} sx={{ mb: -2.25 }}>
-        <Typography variant="h5">Solar Influence Factors</Typography>
+        <Typography variant="h5">EV NO Influence Factors</Typography>
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce title="Total Page Views" count="4,42,236" percentage={59.3} extra="35,000" />
+        <AnalyticEcommerce title="Total noEVs" count={noEVs}/>
+        <Stack direction="row" alignItems="center" spacing={0}>
+              <Button
+                size="small"
+                onClick={() => chagenoEVs('add')}
+                color={"success"}
+              >
+                increase
+              </Button>
+              <Button
+                size="small"
+                onClick={() => chagenoEVs('reduce')}
+                color={"warning"}
+              >
+                decrease
+              </Button>
+            </Stack>
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce title="Total Users" count="78,250" percentage={70.5} extra="8,900" />
+        <AnalyticEcommerce title="battery capacity (KWh)" count={battery}/>
+        <Stack direction="row" alignItems="center" spacing={0}>
+              <Button
+                size="small"
+                onClick={() => chagebattery('add')}
+                color={"success"}
+              >
+                increase
+              </Button>
+              <Button
+                size="small"
+                onClick={() => chagebattery('reduce')}
+                color={"warning"}
+              >
+                decrease
+              </Button>
+            </Stack>
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce title="Total Order" count="18,800" percentage={27.4} isLoss color="warning" extra="1,943" />
+        <AnalyticEcommerce title="consumer (KWh per hosuehold)" count={consumer}/>
+        <Stack direction="row" alignItems="center" spacing={0}>
+              <Button
+                size="small"
+                onClick={() => chageconsumer('add')}
+                color={"success"}
+              >
+                increase
+              </Button>
+              <Button
+                size="small"
+                onClick={() => chageconsumer('reduce')}
+                color={"warning"}
+              >
+                decrease
+              </Button>
+            </Stack>
       </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce title="Total Sales" count="$35,078" percentage={27.4} isLoss color="warning" extra="$20,395" />
-      </Grid>
+
 
       <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} />
 
@@ -45,32 +105,12 @@ const DashboardDefault = () => {
       <Grid item xs={12} md={12} lg={12}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
-            <Typography variant="h5">Unique Visitor</Typography>
-          </Grid>
-          <Grid item>
-            <Stack direction="row" alignItems="center" spacing={0}>
-              <Button
-                size="small"
-                onClick={() => setSlot('month')}
-                color={slot === 'month' ? 'primary' : 'secondary'}
-                variant={slot === 'month' ? 'outlined' : 'text'}
-              >
-                Month
-              </Button>
-              <Button
-                size="small"
-                onClick={() => setSlot('week')}
-                color={slot === 'week' ? 'primary' : 'secondary'}
-                variant={slot === 'week' ? 'outlined' : 'text'}
-              >
-                Week
-              </Button>
-            </Stack>
+            <Typography variant="h5">EV sales</Typography>
           </Grid>
         </Grid>
         <MainCard content={false} sx={{ mt: 1.5 }}>
           <Box sx={{ pt: 1, pr: 2 }}>
-            <IncomeAreaChart slot={slot} />
+            <IncomeAreaChart noEVs={noEVs} consumer={consumer} battery={battery}/>
           </Box>
         </MainCard>
       </Grid>

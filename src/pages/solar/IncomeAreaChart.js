@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
 // material-ui
@@ -30,13 +29,14 @@ const areaChartOptions = {
 
 // ==============================|| INCOME AREA CHART ||============================== //
 
-const IncomeAreaChart = ({ slot }) => {
+const IncomeAreaChart = ({noEVs, battery, consumer }) => {
   const theme = useTheme();
-
   const { primary, secondary } = theme.palette.text;
   const line = theme.palette.divider;
 
   const [options, setOptions] = useState(areaChartOptions);
+  const [Energy, setEnergy] = useState(1);
+  const [consumers, setconsumers] = useState(2);
 
   useEffect(() => {
     setOptions((prevState) => ({
@@ -44,9 +44,7 @@ const IncomeAreaChart = ({ slot }) => {
       colors: [theme.palette.primary.main, theme.palette.primary[700]],
       xaxis: {
         categories:
-          slot === 'month'
-            ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          ['2028', '2030', '2032', '2034', '2036', '2038', '2040', '2042', '2044', '2046', '2048', '2050'],
         labels: {
           style: {
             colors: [
@@ -61,7 +59,7 @@ const IncomeAreaChart = ({ slot }) => {
               secondary,
               secondary,
               secondary,
-              secondary
+              secondary,
             ]
           }
         },
@@ -69,7 +67,7 @@ const IncomeAreaChart = ({ slot }) => {
           show: true,
           color: line
         },
-        tickAmount: slot === 'month' ? 11 : 7
+        tickAmount: 11
       },
       yaxis: {
         labels: {
@@ -85,37 +83,26 @@ const IncomeAreaChart = ({ slot }) => {
         theme: 'light'
       }
     }));
-  }, [primary, secondary, line, theme, slot]);
+  }, [primary, secondary, line, theme]);
 
-  const [series, setSeries] = useState([
-    {
-      name: 'Page Views',
-      data: [0, 86, 28, 115, 48, 210, 136]
-    },
-    {
-      name: 'Sessions',
-      data: [0, 43, 14, 56, 24, 105, 68]
-    }
-  ]);
+  const [series, setSeries] = useState([]);
 
   useEffect(() => {
+    setEnergy(Math.round((noEVs*battery)/100000));
+    setconsumers(Math.round((consumer*9)));
     setSeries([
       {
-        name: 'Page Views',
-        data: slot === 'month' ? [76, 85, 101, 98, 87, 105, 91, 114, 94, 86, 115, 35] : [31, 40, 28, 51, 42, 109, 100]
+        name: 'Energy Produced',
+        data: [9*Energy, 16*Energy, 25*Energy, 36*Energy, 49*Energy, 64*Energy,  81*Energy, 100*Energy, 121*Energy, 142*Energy, 160*Energy, 190*Energy]
       },
       {
-        name: 'Sessions',
-        data: slot === 'month' ? [110, 60, 150, 35, 60, 36, 26, 45, 65, 52, 53, 41] : [11, 32, 45, 32, 34, 52, 41]
+        name: 'Energy Consumed',
+        data: [9*consumers, 16*consumers, 25*consumers, 36*consumers, 49*consumers, 64*consumers,  81*consumers, 100*consumers, 121*consumers, 142*consumers,  160*consumers,  190*consumers] 
       }
     ]);
-  }, [slot]);
+  }, [consumer, consumers, noEVs, battery, Energy]);
 
   return <ReactApexChart options={options} series={series} type="area" height={450} />;
-};
-
-IncomeAreaChart.propTypes = {
-  slot: PropTypes.string
 };
 
 export default IncomeAreaChart;
