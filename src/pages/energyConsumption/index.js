@@ -19,24 +19,36 @@ import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
 
 const DashboardDefault = () => {
   const [slot, setSlot] = useState('week');
+  const [evnumber, setEvnumber] = useState(0);
 
+  const chageEVnumber = (change) => {
+    let newEVnumber = change=='add'?evnumber + 12 : evnumber - 12;
+    setEvnumber(newEVnumber);
+  }
   return (
     <Grid container rowSpacing={4.5} columnSpacing={2.75}>
       {/* row 1 */}
       <Grid item xs={12} sx={{ mb: -2.25 }}>
-        <Typography variant="h5">energyConsumption Influence Factors</Typography>
+        <Typography variant="h5">Energy Consumption Influence Factors</Typography>
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce title="Total Page Views" count="4,42,236" percentage={59.3} extra="35,000" />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce title="Total Users" count="78,250" percentage={70.5} extra="8,900" />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce title="Total Order" count="18,800" percentage={27.4} isLoss color="warning" extra="1,943" />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce title="Total Sales" count="$35,078" percentage={27.4} isLoss color="warning" extra="$20,395" />
+        <AnalyticEcommerce title="EV numbers" count={evnumber + 1000} percentage={59.3} extra="35,000" />
+        <Stack direction="row" alignItems="center" spacing={0}>
+              <Button
+                size="small"
+                onClick={() => chageEVnumber('add')}
+                color={"success"}
+              >
+                increase
+              </Button>
+              <Button
+                size="small"
+                onClick={() => chageEVnumber('reduce')}
+                color={"warning"}
+              >
+                decrease
+              </Button>
+            </Stack>
       </Grid>
 
       <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} />
@@ -45,7 +57,7 @@ const DashboardDefault = () => {
       <Grid item xs={12} md={12} lg={12}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
-            <Typography variant="h5">Unique Visitor</Typography>
+            <Typography variant="h5">Energy Consumption</Typography>
           </Grid>
           <Grid item>
             <Stack direction="row" alignItems="center" spacing={0}>
@@ -70,7 +82,7 @@ const DashboardDefault = () => {
         </Grid>
         <MainCard content={false} sx={{ mt: 1.5 }}>
           <Box sx={{ pt: 1, pr: 2 }}>
-            <IncomeAreaChart slot={slot} />
+            <IncomeAreaChart slot={slot} evnumber={evnumber} />
           </Box>
         </MainCard>
       </Grid>
