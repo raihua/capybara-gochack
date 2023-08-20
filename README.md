@@ -1,3 +1,20 @@
+# Table of Contents
+
+- [Welcome to ElectroForesight Dashboard](#welcome-to-electroforesight-dashboard)
+  - [Project Overview](#project-overview)
+  - [Getting Started](#getting-started)
+  - [Website Instructions](#website-instructions)
+  - [Technology Stack](#technology-stack)
+  - [Evidence of Work](#evidence-of-work)
+    - [Wireframe](#wireframe)
+    - [Interpreting Data from Machine Learning ARIMA Model](#interpreting-data-from-machine-learning-arima-model)
+    - [Forecast Generation with Python](#forecast-generation-with-python)
+    - [Video Editing](#video-editing)
+    - [Deployment](#deployment)
+  - [Team Members](#team-members)
+
+---
+
 # Welcome to ElectroForesight Dashboard
 
 ![image](https://github.com/raihua/capybara-govhack/assets/115681947/633f037f-5f85-4e0b-8500-544275596c1c)
@@ -27,6 +44,27 @@ Each page of our website displays the count of electric vehicles and buttons to 
 
 Explore our ElectroForesight Dashboard and discover the future of Electric Vehicles!
 
+## Technology Stack
+
+The ElectroForesight Dashboard is built on a robust technology stack that combines various tools and libraries to provide a seamless and efficient user experience.
+
+- **Material UI V5:** We've utilized Material UI V5, a popular and versatile UI framework, to create visually appealing and responsive user interfaces.
+
+- **React Hooks API:** Leveraging the power of React Hooks, our application benefits from improved code organization and reusability, making development smoother and more efficient.
+
+- **Redux & React Context API:** For effective state management, we've harnessed the capabilities of both Redux and the React Context API. This ensures centralized and consistent data handling throughout the application.
+
+- **Redux Toolkit:** Our team has chosen Redux Toolkit, a comprehensive package, to simplify and streamline the process of managing state, actions, and reducers in Redux.
+
+- **React Router:** Navigation routing is seamless and intuitive thanks to React Router. Users can move through different sections of the dashboard with ease and speed.
+
+- **Support for react-scripts:** By integrating with react-scripts, we've enabled a straightforward development experience, allowing for quick testing and deployment.
+
+- **Code Splitting:** To enhance performance, our application utilizes code splitting techniques, ensuring that only necessary components are loaded, minimizing initial loading times.
+
+- **CSS-in-JS:** We've adopted CSS-in-JS for styling, enabling a component-based approach to styling that ensures encapsulation and maintainability.
+
+
 
 ## Evidence of Work
 ### Wireframe
@@ -47,11 +85,12 @@ You can use the Forecast Generator tool by running it in Python. Make sure to ad
 ### Deployment
 <img width="1395" alt="Screenshot 2023-08-20 at 4 09 40 pm" src="https://github.com/raihua/capybara-govhack/assets/55374648/ebb6a45c-d83a-407c-a02a-d73bb0d1a139">
 
-## Team Members
--Thomas Keo
--Hanqing Zhao
--Thenul Premadasa
--Peter Trinh
--Patrick Li
+## Meet the team
+- Thomas Keo
+- Hanqing Zhao
+- Thenul Premadasa
+- Peter Trinh
+- Patrick Li
+
 
 Feel free to explore our collaborative effort, the ElectroForesight Dashboard, and join us in shaping the future of Electric Vehicles!
