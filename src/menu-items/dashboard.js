@@ -29,7 +29,14 @@ const dashboard = {
       icon: icons.DashboardOutlined,
       breadcrumbs: false
     },
-    
+    {
+      id: 'dashboard3',
+      title: 'Energy Production',
+      type: 'item',
+      url: '/dashboard/solar',
+      icon: icons.DashboardOutlined,
+      breadcrumbs: false
+    },
   ]
 };
 

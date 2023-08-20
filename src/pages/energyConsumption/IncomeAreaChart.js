@@ -108,11 +108,11 @@ const IncomeAreaChart = ({ slot, evnumber }) => {
   useEffect(() => {
     setSeries([
       {
-        name: 'EV consumption',
+        name: 'EV consumption (KWh)',
         data: slot === 'month' ? energyConsumptionDayCharge : energyConsumptionNightCharge
       },
       {
-        name: 'Network capacity',
+        name: 'Network capacity (KWh)',
         data: slot === 'month' ?  networkCapacity : networkCapacity
       }
     ]);
