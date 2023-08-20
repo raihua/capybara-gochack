@@ -29,6 +29,7 @@ const dashboard = {
       icon: icons.DashboardOutlined,
       breadcrumbs: false
     },
+    
     {
       id: 'dashboard3',
       title: 'Energy Production',
@@ -37,7 +38,18 @@ const dashboard = {
       icon: icons.DashboardOutlined,
       breadcrumbs: false
     },
+  
+      {
+      id: 'dashboard4',
+      title: 'GDP',
+      type: 'item',
+      url: '/dashboard/gdp',
+      icon: icons.DashboardOutlined,
+      breadcrumbs: false
+    },
+    
   ]
+ 
 };
 
 export default dashboard;
