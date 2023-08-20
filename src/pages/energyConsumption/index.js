@@ -29,10 +29,10 @@ const DashboardDefault = () => {
     <Grid container rowSpacing={4.5} columnSpacing={2.75}>
       {/* row 1 */}
       <Grid item xs={12} sx={{ mb: -2.25 }}>
-        <Typography variant="h5">Energy Consumption Influence Factors</Typography>
+        <Typography variant="h5">Energy Consumption Influence Factor</Typography>
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce title="EV numbers" count={evnumber + 1000} percentage={59.3} extra="35,000" />
+        <AnalyticEcommerce title="EV numbers" count={evnumber + 100}/>
         <Stack direction="row" alignItems="center" spacing={0}>
               <Button
                 size="small"
