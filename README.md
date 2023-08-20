@@ -15,3 +15,7 @@ Additionally, we have pondered the relationship between EV development and energ
 
 ![efc2caf8bb2a3aac2d79bcdde9556594](https://github.com/raihua/capybara-govhack/assets/115681947/15cc49b4-85e5-4628-a733-e4b6e89354bc)
 ![c379cad6d38049d7949375b7207df9d9](https://github.com/raihua/capybara-govhack/assets/115681947/4b135b87-1cf8-4e69-bdbe-72a7c46cf7e0)
+
+### Interpreting data from machine learning ARIMA model
+<img width="1045" alt="USGDPEV-forecast" src="https://github.com/raihua/capybara-govhack/assets/55374648/a7784471-f59f-4761-8032-9b2e031ca81f">
+
