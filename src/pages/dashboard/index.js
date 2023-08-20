@@ -18,20 +18,20 @@ import AnalyticEcommerce from 'components/cards/statistics/DashboardAnalyticEcom
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
 const DashboardDefault = () => {
-  const [population, setPopulation] = useState(1000);
-  const [gdp, setGdp] = useState(1000);
-  const [solar, setSolar] = useState(1000);
+  const [population, setPopulation] = useState(100);
+  const [gdp, setGdp] = useState(100);
+  const [solar, setSolar] = useState(100);
 
   const chagePopulation = (change) => {
-    let newPopulation = change=='add'?population + 100 : population - 100;
+    let newPopulation = change=='add'?population + 10 : population - 10;
     setPopulation(newPopulation);
   }
   const chageGDP = (change) => {
-    let newGdp = change=='add'?gdp + 100 : gdp - 100;
+    let newGdp = change=='add'?gdp + 10 : gdp - 10;
     setGdp(newGdp);
   }
   const chageSolar = (change) => {
-    let newSolar = change=='add'?solar + 100 : solar - 100;
+    let newSolar = change=='add'?solar + 10 : solar - 10;
     setSolar(newSolar);
   }
   return (

@@ -87,7 +87,7 @@ const IncomeAreaChart = ({population, gdp,solar }) => {
   const [series, setSeries] = useState([]);
 
   useEffect(() => {
-    setFactor(population*0.76 + gdp*1.33 + solar*.34);
+    setFactor(population*7.6 + gdp*13.3 + solar*3.4);
     setSeries([
       {
         name: 'EV Numbers',
