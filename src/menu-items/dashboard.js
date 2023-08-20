@@ -10,7 +10,7 @@ const icons = {
 
 const dashboard = {
   id: 'group-dashboard',
-  title: 'Navigation',
+  title: 'Dashboard',
   type: 'group',
   children: [
     {
@@ -29,30 +29,7 @@ const dashboard = {
       icon: icons.DashboardOutlined,
       breadcrumbs: false
     },
-    {
-      id: 'dashboard3',
-      title: 'Population',
-      type: 'item',
-      url: '/dashboard/population',
-      icon: icons.DashboardOutlined,
-      breadcrumbs: false
-    },
-    {
-      id: 'dashboard4',
-      title: 'GDP',
-      type: 'item',
-      url: '/dashboard/gdp',
-      icon: icons.DashboardOutlined,
-      breadcrumbs: false
-    },
-    {
-      id: 'dashboard5',
-      title: 'Solar',
-      type: 'item',
-      url: '/dashboard/solar',
-      icon: icons.DashboardOutlined,
-      breadcrumbs: false
-    }
+    
   ]
 };
 

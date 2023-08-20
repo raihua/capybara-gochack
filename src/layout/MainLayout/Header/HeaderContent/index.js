@@ -12,7 +12,7 @@ const HeaderContent = () => {
 
   return (
     <>
-      {!matchesXs && <Typography variant="h5">SA xxx</Typography>}
+      {!matchesXs && <Typography variant="h5">ElectroForesight Dashboard</Typography>}
       {matchesXs && <Box sx={{ width: '100%', ml: 1 }} />}
 
       
