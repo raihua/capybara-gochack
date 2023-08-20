@@ -13,6 +13,8 @@ Additionally, we have pondered the relationship between EV development and energ
 
 
 ## Getting started
+Visit at capybara-govhack.vercel.app
+or
 Clone from Github
 ```
 git clone https://github.com/raihua/capybara-govhack.git
@@ -35,10 +37,20 @@ Explore our ElectroForesight Dashboard and discover the future of Electric Vehic
 ### Interpreting Data from Machine Learning ARIMA Model
 ![USGDPEV-forecast](https://github.com/raihua/capybara-govhack/assets/55374648/a7784471-f59f-4761-8032-9b2e031ca81f)
 
-## Forecast Generation with Python
+### Forecast Generation with Python
 You can use the Forecast Generator tool by running it in Python. Make sure to adjust the date ranges for the periods you want to forecast and change the file name to the CSV file you wish to read. Also, ensure that you modify the export file name to prevent overriding existing files.
 
+### Video editing
+![editing video](https://github.com/raihua/capybara-govhack/assets/55374648/5c791a74-cbce-4f92-9733-1270567acc86)
 
+### Deployment
+<img width="1395" alt="Screenshot 2023-08-20 at 4 09 40 pm" src="https://github.com/raihua/capybara-govhack/assets/55374648/ebb6a45c-d83a-407c-a02a-d73bb0d1a139">
 
+## Team Members
+Thomas Keo
+Hanqing Zhao
+Thenul Premadasa
+Peter Trinh
+Patrick Li
 
 
