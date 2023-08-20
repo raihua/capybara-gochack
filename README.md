@@ -35,6 +35,7 @@ Explore our ElectroForesight Dashboard and discover the future of Electric Vehic
 ![c379cad6d38049d7949375b7207df9d9](https://github.com/raihua/capybara-govhack/assets/115681947/4b135b87-1cf8-4e69-bdbe-72a7c46cf7e0)
 
 ### Interpreting Data from Machine Learning ARIMA Model
+<img width="895" alt="Screenshot 2023-08-20 at 4 14 13 pm" src="https://github.com/raihua/capybara-govhack/assets/55374648/de448846-cc72-484e-a9b4-967b7d7675dd">
 ![USGDPEV-forecast](https://github.com/raihua/capybara-govhack/assets/55374648/a7784471-f59f-4761-8032-9b2e031ca81f)
 
 ### Forecast Generation with Python
