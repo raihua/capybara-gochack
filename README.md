@@ -85,7 +85,7 @@ You can use the Forecast Generator tool by running it in Python. Make sure to ad
 ### Deployment
 <img width="1395" alt="Screenshot 2023-08-20 at 4 09 40 pm" src="https://github.com/raihua/capybara-govhack/assets/55374648/ebb6a45c-d83a-407c-a02a-d73bb0d1a139">
 
-## Meet the team
+## Team members
 - Thomas Keo
 - Hanqing Zhao
 - Thenul Premadasa
